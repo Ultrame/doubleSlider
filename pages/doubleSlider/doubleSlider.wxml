@@ -1,0 +1,24 @@
+<view class='select-construct'>
+  <view class='select-area'>
+    <text>{{slider1Value*scale+'~'+slider2Value*scale}}</text>
+    <view class='slider-container'>
+      <slider style='width:{{slider1W+"%"}}' class='slider-left' min='{{min}}' max='{{slider1Max}}' color='#fed900' selected-color='#e5e5e5' bindchanging='changing' catchtouchstart='changeStart' bindchange='changed' data-idx='1' value='{{slider1Value}}'></slider>
+      <slider wx:if='{{!change}}' style='width:{{slider2W+"%"}}' class='slider-right' min='{{slider2Min}}' max='{{max}}' color='#e5e5e5' selected-color='#fed900' bindchanging='changing'catchtouchstart='changeStart'  bindchange='changed' data-idx='2' value='{{slider2Value}}'></slider>
+    </view>
+  </view>
+</view>
+
+<view class='control-container'>
+  <label class='label-container'>最小值<input class='input' bindinput='inputMin' type='number' placeholder='0'></input></label>
+  <label class='label-container'>最大值<input class='input' bindinput='inputMax' type='number' placeholder='100'></input></label>
+</view>
+
+<button class='confirm' catchtap='confirm'>确 定</button>
+
+<view class='tips-container'>
+  <text class='tip-title'>Tips：</text>
+  <text class='tip'>最大值必须大于最小值，且都是整数。</text>
+  <text class='tip'>如果最大值和最小值之差小于或等于300，则对最大值和最小值没有要求。</text>
+  <text class='tip'>如果最大值和最小值的差大于300，小于或等于3000，那么最大值和最小值都必须能被10整除。</text>
+  <text class='tip'>最大值和最小值的差大于3000，目前还没考虑。</text>
+</view>
