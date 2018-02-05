@@ -5,7 +5,7 @@ Page({
     change: false, // 当两个slider在最右端重合时，将change设置为true，从而隐藏slider2，才能继续操作slider1
     max: 100, // 两个slider所能达到的最大值
     min: 0, // 两个slider所能取的最小值
-    rate: 1, // slider的最大值和100之间的比率
+    rate: 1, // slider的最大最小值之差和100（或1000）之间的比率
     scale: 1, // 比例系数。页面显示值的时候，需要将slider1Value(slider2Value)乘以比例系数scale
     slider1Max: 100, // slider1的最大取值
     slider2Value: 100, // slider2的值
@@ -111,7 +111,7 @@ Page({
   },
   showTip: function (text) {
     wx.showToast({
-      title: text
+      title: text,
     })
   },
   confirm: function () {
