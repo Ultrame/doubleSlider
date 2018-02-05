@@ -42,7 +42,6 @@ Page({
   changing: function (e) {
     var idx = parseInt(e.currentTarget.dataset.idx)
     var value = e.detail.value
-    var result = value / this.data.rate
     if (idx === 1) {
       this.setData({
         slider1Value: value
@@ -112,6 +111,7 @@ Page({
   showTip: function (text) {
     wx.showToast({
       title: text,
+      icon: 'none'
     })
   },
   confirm: function () {
